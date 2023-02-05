@@ -24,8 +24,8 @@ export async function getHotels(req: AuthenticatedRequest, res: Response) {
 
 export async function getHotelById(req: AuthenticatedRequest, res: Response) {
   try {
-    const hotel = await hotelsService.getHotelById(req.userId as number);
-    res.send(hotel);
+    // const hotel = await hotelsService.getHotelById(req.userId as number);
+    // res.send(hotel);
   } catch {
     res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
   }
