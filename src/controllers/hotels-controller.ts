@@ -36,6 +36,10 @@ export async function getHotelById(req: AuthenticatedRequest, res: Response) {
       res.status(httpStatus.PAYMENT_REQUIRED).send(error);
     }
 
+    if (error.name === "RequestError") {
+      res.status(httpStatus.BAD_REQUEST).send(error);
+    }
+
     res.sendStatus(httpStatus.INTERNAL_SERVER_ERROR);
   }
 }
